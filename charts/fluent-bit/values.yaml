@@ -6,6 +6,9 @@ kind: DaemonSet
 # replicaCount -- Only applicable if kind=Deployment
 replicaCount: 1
 
+test:
+  enabled: true
+
 image:
   repository: fluent/fluent-bit
   pullPolicy: Always
