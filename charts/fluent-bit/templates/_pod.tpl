@@ -51,6 +51,11 @@ containers:
       - name: config
         mountPath: /fluent-bit/etc/custom_parsers.conf
         subPath: custom_parsers.conf
+    {{- if .Values.config.lua }}
+      - name: config
+        mountPath: /fluent-bit/etc/functions.lua
+        subPath: functions.lua
+    {{- end }}
     {{- if eq .Values.kind "DaemonSet" }}
       - name: varlog
         mountPath: /var/log
