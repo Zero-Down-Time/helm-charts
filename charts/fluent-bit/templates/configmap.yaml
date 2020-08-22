@@ -12,3 +12,7 @@ data:
     {{- .Values.config.inputs  | nindent 4 }}
     {{- .Values.config.filters  | nindent 4 }}
     {{- .Values.config.outputs  | nindent 4 }}
+  {{- if .Values.config.lua }}
+  functions.lua: |
+    {{- .Values.config.lua  | nindent 4 }}
+  {{- end }}
